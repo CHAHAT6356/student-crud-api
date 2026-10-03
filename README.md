@@ -1,310 +1,121 @@
-\# Student CRUD API
+# Student CRUD API
 
+A simple Student Management REST API built using **FastAPI** and **Python**. This project provides CRUD (Create, Read, Update, Delete) operations for managing student records using in-memory storage.
 
+## 🚀 Live Demo
 
-A simple Student Management REST API built using \*\*FastAPI\*\* and \*\*Python\*\*. This project provides CRUD (Create, Read, Update, Delete) operations for managing student records using in-memory storage.
+**Swagger UI / API:**  
+https://github.com/CHAHAT6356/student-crud-api
 
+> The root URL opens the interactive Swagger documentation directly.
 
+### Main Endpoint
 
-\## 🚀 API Documentation
-
-
-
-\*\*Swagger UI / API:\*\*
-
-
-
-`http://127.0.0.1:8000/docs`
-
-
-
-The `/docs` URL opens the interactive Swagger documentation.
-
-
-
-\## 📌 Main Endpoints
-
-
+`/students/`
 
 Supports:
 
+- `POST /students/`
+- `GET /students/`
+- `GET /students/{student_id}`
+- `PUT /students/{student_id}`
+- `DELETE /students/{student_id}`
 
+## ✨ Features
 
-\* `POST /students`
+* Create a new student
+* Retrieve all students
+* Retrieve a student by ID
+* Update existing student details
+* Delete a student
+* Input validation using Pydantic
+* Proper HTTP status codes
+* Interactive API documentation using Swagger UI
 
-\* `GET /students`
+## 🛠️ Tech Stack
 
-\* `GET /students/{student\_id}`
+* Python
+* FastAPI
+* Pydantic
+* Uvicorn
 
-\* `PUT /students/{student\_id}`
-
-\* `DELETE /students/{student\_id}`
-
-
-
-\## ✨ Features
-
-
-
-\* Create a new student
-
-\* Retrieve all students
-
-\* Retrieve a student by ID
-
-\* Update existing student details
-
-\* Delete a student
-
-\* Input validation using Pydantic
-
-\* Proper HTTP status codes
-
-\* Interactive API documentation using Swagger UI
-
-\* In-memory student data storage
-
-
-
-\## 🛠️ Tech Stack
-
-
-
-\* Python
-
-\* FastAPI
-
-\* Pydantic
-
-\* Uvicorn
-
-
-
-\## 📁 Project Structure
-
-
+## 📁 Project Structure
 
 ```text
-
-student-crud-Asm1/
-
+student-crud/
 │
-
 ├── controllers/
-
-│   └── student\_controller.py
-
+│   └── student_controller.py
 │
-
 ├── models/
-
-│   └── student\_model.py
-
+│   └── student_model.py
 │
-
 ├── routes/
-
-│   └── student\_routes.py
-
+│   └── student_routes.py
 │
-
 ├── main.py
-
 ├── requirements.txt
-
+├── .gitignore
 └── README.md
-
 ```
 
+## ⚙️ Installation and Setup
 
-
-\## ⚙️ Installation and Setup
-
-
-
-\### 1. Navigate to the project folder
-
-
+### 1. Clone the repository
 
 ```bash
-
-cd student-crud-Asm1
-
+git clone https://github.com/CHAHAT6356/student-crud-api.git
 ```
 
-
-
-\### 2. Install dependencies
-
-
+### 2. Navigate to the project folder
 
 ```bash
+cd student-crud-api
+```
 
+### 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
-
 ```
 
-
-
-\### 3. Run the application
-
-
+### 4. Run the application
 
 ```bash
-
 uvicorn main:app --reload
-
 ```
 
-
-
-\### 4. Open the API documentation
-
-
+### 5. Open the API documentation
 
 Visit:
 
+http://127.0.0.1:8000/docs
 
-
-`http://127.0.0.1:8000/docs`
-
-
-
-\## 🧪 Testing
-
-
+## 🧪 Testing
 
 Use Swagger UI to test all five CRUD endpoints.
 
+1. Open `/docs`.
+2. Select an endpoint.
+3. Click **Try it out**.
+4. Enter the required data.
+5. Click **Execute** to view the response.
 
+## 💾 Data Storage
 
-1\. Open `/docs`.
+This project uses in-memory storage. Student records are not permanently saved and are cleared whenever the application restarts.
 
-2\. Select an endpoint.
+## ☁️ Deployment
 
-3\. Click \*\*Try it out\*\*.
+The application is deployed on Render using the GitHub repository.
 
-4\. Enter the required student data.
+* **Build Command:** `pip install -r requirements.txt`
+* **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
 
-5\. Click \*\*Execute\*\*.
+## 👨‍💻 Author
 
-6\. View the API response.
+**Nikunj Makwana**
 
+GitHub: [CHAHAT6356](https://github.com/CHAHAT6356)
 
-
-\## 💾 Data Storage
-
-
-
-This project uses \*\*in-memory storage\*\*. Student records are not permanently saved and are cleared whenever the application restarts.
-
-
-
-\## 📊 Student Fields
-
-
-
-Each student record contains:
-
-
-
-\* `id` — Student ID
-
-\* `name` — Student name
-
-\* `email` — Student email
-
-\* `course` — Student course
-
-\* `semester` — Current semester
-
-
-
-\## 🔗 API Response Codes
-
-
-
-\* `201` — Student successfully created
-
-\* `200` — Request successfully completed
-
-\* `204` — Student successfully deleted
-
-\* `404` — Student not found
-
-\* `422` — Validation error
-
-
-
-\## 👨‍💻 Author
-
-
-
-\*\*Nikunj Makwana\*\*
-
-
-
-GitHub: `Your GitHub Profile`
-
-
-
-Repository: `student-crud-Asm1`
-
-
-
-````
-
-
-
-This is aligned with Assignment 2's requirement that the README explain \*\*what the project is and how to run it\*\*.
-
-
-
-\### Now do this
-
-
-
-Save this as:
-
-
-
-```text
-
-README.md
-
-````
-
-
-
-inside:
-
-
-
-```text
-
-C:\\Desktop\\sem 7\\Dev Opps\\Assignment\\student-crud-Asm1
-
-```
-
-
-
-Then run:
-
-
-
-```cmd
-
-dir
-
-```
-
-
-
-and confirm that \*\*`README.md` appears\*\*.
-
-
-
-After that we'll do the \*\*second Git commit\*\*.
-
-
-
+Repository: [student-crud-api](https://github.com/CHAHAT6356/student-crud-api)
